@@ -1,0 +1,37 @@
+{% extends 'master.html' %}
+{% block body %}
+{{ super() }}
+
+<!-- Main jumbotron for a primary marketing message or call to action -->
+<div class="jumbotron">
+    <div class="container">
+      <h3 class="display-4">Bonjour, {{current_user.full_name}} !</h3>
+      <p>Vous êtes actuellement résident de Venys et vous possédez la nationalité yssoise depuis le 2 Décembre An XXII.</p>
+    </div>
+</div>
+
+<div class="container">
+    <!-- Example row of columns -->
+    <div class="row">
+      <div class="col-md-4">
+        <h2>Vous</h2>
+        <p>Vous. Vos proches.</p>
+        <p><a class="btn btn-secondary" href="#" role="button">Accéder à l'espace &raquo;</a></p>
+      </div>
+      <div class="col-md-4">
+        <h2>Banque</h2>
+        <p>Gérez vos comptes. Administrez votre patrimoine. </p>
+        <p><a class="btn btn-secondary" href="/banque" role="button">Accéder à l'espace &raquo;</a></p>
+      </div>
+      <div class="col-md-4">
+        <h2>Immobilier</h2>
+        <p>Gérez vos biens, accéder aux petites annonces.</p>
+        <p><a class="btn btn-secondary" href="#" role="button">Accéder à l'espace &raquo;</a></p>
+      </div>
+    </div>
+
+    <hr>
+
+  </div> <!-- /container -->
+
+{% endblock %}

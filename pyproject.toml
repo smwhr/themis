@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "themis"
+version = "0.1.0"
+description = "Themis : outil de gestion micro-national"
+authors = ["smwhr <ju@smwhr.net>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+Flask = "^2.2.2"
+SQLAlchemy = "^1.4.45"
+flask-sqlalchemy = "^3.0.2"
+Flask-Alembic = "^2.0.1"
+flask-admin = "^1.6.0"
+flask-login = "^0.6.2"
+wtforms = "^3.0.1"
+werkzeug = "^2.2.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
