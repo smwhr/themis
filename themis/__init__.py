@@ -43,3 +43,5 @@ def create_app(config_class=Config):
         return 'καλημέρα Θέμις'
 
     return app
+
+app = create_app()
