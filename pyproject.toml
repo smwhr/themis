@@ -11,11 +11,12 @@ python = "^3.9"
 Flask = "^2.2.2"
 SQLAlchemy = "^1.4.45"
 flask-sqlalchemy = "^3.0.2"
-Flask-Alembic = "^2.0.1"
-flask-admin = "^1.6.0"
 flask-login = "^0.6.2"
 wtforms = "^3.0.1"
 werkzeug = "^2.2.2"
+flask-migrate = "^4.0.0"
+flask-wtf = "^1.0.1"
+mysql = "^0.0.3"
 
 
 [build-system]

@@ -1,10 +1,12 @@
-from wtforms import form, fields, validators
+from wtforms import fields, validators
+
+from flask_wtf import FlaskForm
 from werkzeug.security import check_password_hash
 
 from themis.extensions import db
-from themis.models.personne import Personne
+from ..models.personne import Personne
 
-class LoginForm(form.Form):
+class LoginForm(FlaskForm):
     email = fields.StringField()
     password = fields.PasswordField()
 

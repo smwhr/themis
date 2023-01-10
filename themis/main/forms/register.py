@@ -1,9 +1,10 @@
-from wtforms import form, fields, validators
+from flask_wtf import FlaskForm
+from wtforms import fields, validators
 
 from themis.extensions import db
-from themis.models.personne import Personne
+from ..models.personne import Personne
 
-class RegistrationForm(form.Form):
+class RegistrationForm(FlaskForm):
     email = fields.StringField()
     nom = fields.StringField()
     prenom = fields.StringField()
