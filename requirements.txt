@@ -139,17 +139,9 @@ markupsafe==2.1.1 ; python_version >= "3.9" and python_version < "4.0" \
     --hash=sha256:efc1913fd2ca4f334418481c7e595c00aad186563bbc1ec76067848c7ca0a933 \
     --hash=sha256:f121a1420d4e173a5d96e47e9a0c0dcff965afdf1626d28de1460815f7c4ee7a \
     --hash=sha256:fc7b548b17d238737688817ab67deebb30e8073c95749d55538ed473130ec0c7
-mysql==0.0.3 ; python_version >= "3.9" and python_version < "4.0" \
-    --hash=sha256:8893cb143a5ac525c49ef358a23b8a0dc9721a95646f7bab6ca2f384c18a6a9a \
-    --hash=sha256:fd7bae7d7301ce7cd3932e5ff7f77bbc8e34872108252866e08d16d6b8e8de8c
-mysqlclient==2.1.1 ; python_version >= "3.9" and python_version < "4.0" \
-    --hash=sha256:0d1cd3a5a4d28c222fa199002810e8146cffd821410b67851af4cc80aeccd97c \
-    --hash=sha256:828757e419fb11dd6c5ed2576ec92c3efaa93a0f7c39e263586d1ee779c3d782 \
-    --hash=sha256:996924f3483fd36a34a5812210c69e71dea5a3d5978d01199b78b7f6d485c855 \
-    --hash=sha256:b355c8b5a7d58f2e909acdbb050858390ee1b0e13672ae759e5e784110022994 \
-    --hash=sha256:c1ed71bd6244993b526113cca3df66428609f90e4652f37eb51c33496d478b37 \
-    --hash=sha256:c812b67e90082a840efb82a8978369e6e69fc62ce1bda4ca8f3084a9d862308b \
-    --hash=sha256:dea88c8d3f5a5d9293dfe7f087c16dd350ceb175f2f6631c9cf4caf3e19b7a96
+pymysql==1.0.2 ; python_version >= "3.9" and python_version < "4.0" \
+    --hash=sha256:41fc3a0c5013d5f039639442321185532e3e2c8924687abe6537de157d403641 \
+    --hash=sha256:816927a350f38d56072aeca5dfb10221fe1dc653745853d30a216637f5d7ad36
 setuptools==65.6.3 ; python_version >= "3.9" and python_version < "4.0" \
     --hash=sha256:57f6f22bde4e042978bcd50176fdb381d7c21a9efa4041202288d3737a0c6a54 \
     --hash=sha256:a7620757bf984b58deaf32fc8a4577a9bbc0850cf92c20e1ce41c38c19e5fb75
