@@ -1,4 +1,5 @@
 {% extends 'layouts/base.html' %}
+{% from "macros/form.html" import render, submit %}
 {% block content %}
 
 
@@ -63,22 +64,8 @@
               <div class="col-12">
                 <form role="form" method="post" action="{{ url_for('banque.create_account') }}" class="mx-3">
 
-                  {{ form.hidden_tag() }} 
-
-                  {% for f in form if f.type != 'CSRFTokenField' %}
-
-                  <div class="input-group input-group-outline mb-3">
-                      {{f.label(class="form-label")}}
-                      {{ f(class="form-control", onfocus="focused(this)") }}
-                  </div>
-                
-
-                  {% endfor %}
-                  
-                  <div class="text-center">
-                    <button type="submit" name="login" 
-                            class="btn bg-gradient-primary w-100 my-2 mb-2">Créer un compte</button>
-                  </div>
+                  {{render(form)}}
+                  {{submit("Créer un compte")}}
                   
                 </form>
               </div>
@@ -105,18 +92,8 @@
                 <p class="mx-3">Vous ne pouvez pas supprimer votre compte principal. Le solde d'un compte doit être nul pour pouvoir le supprimer.</p>
                 <form role="form" method="post" action="{{ url_for('banque.delete_account') }}" class="mx-3">
 
-                    {{ delete_form.hidden_tag() }} 
-
-                    <select name="compte_id" class="form-select p-2">
-                      {% for c in comptes[1:] %}
-                      <option value="{{c.id}}">{{c.nom}}</option>
-                      {% endfor %}
-                    </select>
-                  
-                  <div class="text-center">
-                    <button type="submit" name="delete" 
-                            class="btn bg-gradient-primary w-100 my-2 mb-2">Supprimer</button>
-                  </div>
+                  {{render(delete_form)}}
+                  {{submit("Supprimer")}}
 
                 </form>
               </div>

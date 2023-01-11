@@ -1,9 +1,9 @@
 from themis.main import bp
 
-from flask import redirect, url_for, request, render_template
+from flask import redirect, url_for, request, render_template, flash
 
 import flask_login as login
-from werkzeug.security import generate_password_hash
+from werkzeug.security import generate_password_hash, check_password_hash
 
 from .models.personne import Personne
 from themis.extensions import db
@@ -25,12 +25,15 @@ def login_view():
     form = LoginForm(request.form)
     if form.validate_on_submit():
         user = form.get_user()
-        if user is None:
+        if user is not None and check_password_hash(user.password, form.password.data):
+            login.login_user(user)
+        else:
+            flash(f"Email inconnu ou mot de passe incorrect.", "danger")
             return redirect(url_for('.login_view'))
-        login.login_user(user)
 
     if login.current_user.is_authenticated:
         return redirect(url_for('.index'))
+    
     link = '<p>Pas encore de passeport ? <a href="' + url_for('.register_view') + '">Faîtes votre demande d\'immigration ici.</a></p>'
     
     return render_template("auth/login.html", 
