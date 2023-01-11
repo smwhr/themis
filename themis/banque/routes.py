@@ -75,8 +75,11 @@ def delete_account():
     form = DeletionForm(request.form)
     form.populate([(d.id, d.nom) for d in deletable])
     if form.validate_on_submit():
-        db.session.query(Compte).filter(Compte.id ==form.compte_id.data).delete()
-        db.session.commit()
+        compte = db.session.query(Compte).filter(Compte.id ==form.compte_id.data)
+        
+        if compte.montant == 0:
+            compte.delete()
+            db.session.commit()
         return redirect(url_for('banque.index'))
     return "fail",  400
     
