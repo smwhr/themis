@@ -13,4 +13,5 @@ class Compte(db.Model):
     montant = db.Column(db.Integer, nullable=False, default=0, server_default='0')
 
     transactions = relationship("Transaction", back_populates="compte")
+    last_transaction = db.Column(db.DateTime)
 

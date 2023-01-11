@@ -27,6 +27,7 @@
                     <tr>
                       <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Libellé du compte</th>
                       <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Solde</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Dernière transaction</th>
                       <th class="text-secondary opacity-7"></th>
                     </tr>
                   </thead>
@@ -35,6 +36,7 @@
                     <tr>
                       <td>{{c.nom}}</td>
                       <td>{{c.montant}} Y$</td>
+                      <td>{{c.last_transaction}}</td>
                       <td><a href="#">Détail</a></td>
                     </tr>
                   {% endfor %}
