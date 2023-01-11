@@ -8,7 +8,10 @@ class CreationForm(FlaskForm):
 
 
 class DeletionForm(FlaskForm):
-    compte_id = fields.IntegerField()
+    compte_id = fields.SelectField(label="Compte à supprimer")
+
+    def populate(self, deletable):
+            self.compte_id.choices = deletable
 
 
 class TransactionForm(FlaskForm):

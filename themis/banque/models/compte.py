@@ -10,5 +10,7 @@ class Compte(db.Model):
     personne_id = db.Column(db.Integer, ForeignKey("personne.id"))
     personne = relationship("Personne", back_populates="comptes")
 
+    montant = db.Column(db.Integer, nullable=False, default=0, server_default='0')
+
     transactions = relationship("Transaction", back_populates="compte")
 

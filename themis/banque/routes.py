@@ -14,9 +14,11 @@ from .forms.compte import CreationForm, DeletionForm, TransactionForm
 @login.login_required
 def index():
     comptes = db.session.query(Compte).filter_by(personne=login.current_user).all()
+    deletable = comptes[1:]
 
     form = CreationForm()
     delete_form = DeletionForm()
+    delete_form.populate([(d.id, d.nom) for d in deletable])
 
     return render_template("banque/index.html", 
                            comptes=comptes,
@@ -67,8 +69,11 @@ def create_account():
 @bp.route('/delete_account', methods=('POST', ))
 @login.login_required
 def delete_account():
+    comptes = db.session.query(Compte).filter_by(personne=login.current_user).all()
+    deletable = comptes[1:]
 
     form = DeletionForm(request.form)
+    form.populate([(d.id, d.nom) for d in deletable])
     if form.validate_on_submit():
         db.session.query(Compte).filter(Compte.id ==form.compte_id.data).delete()
         db.session.commit()
